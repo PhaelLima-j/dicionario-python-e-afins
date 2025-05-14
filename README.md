@@ -24,3 +24,66 @@ Para rodar scripts Python, use `python nome_do_script.py`. Se o script estiver e
 Para evitar que o ambiente virtual seja enviado ao repositório remoto, adicione `venv/` ao seu arquivo `.gitignore`.
 
 Este repositório é pessoal, mas está aberto a contribuições e sugestões. Ele será atualizado constantemente conforme novas necessidades e experiências forem surgindo durante os projetos.
+
+
+## ✅ Subindo um banco PostgreSQL no Docker
+
+Rodar um banco de dados PostgreSQL localmente usando Docker, você pode utilizar o docker-compose. Abaixo, um exemplo básico de docker-compose.yml:
+
+services:
+ 
+    postgres:
+ 
+        image: bitnami/postgresql:latest
+ 
+        ports:
+ 
+          - '5432:5433'
+ 
+        environment:
+ 
+          - POSTGRES_USER=postgres1
+ 
+          - POSTGRES_PASSWORD=Optz@tech2025
+ 
+          - POSTGRES_DB=sabesp_pathfinder
+ 
+        volumes:
+ 
+          - polls_pg_data:/bitnami/postgresql
+ 
+volumes:
+ 
+    polls_pg_data:
+
+###🔍 Observações:
+A porta externa é 5433 para evitar conflitos com instalações locais do PostgreSQL, mas você pode usar 5432:5432 se preferir.
+
+A imagem da Bitnami já vem com boas práticas de segurança e configuração padrão.
+
+O volume polls_pg_data garante que os dados do banco sejam persistidos mesmo que o container seja destruído.
+
+O parâmetro restart: unless-stopped faz o container reiniciar automaticamente, exceto se você pará-lo manualmente.
+
+###▶️ Comandos úteis:
+
+Para subir o serviço:
+docker-compose up -d
+
+Para parar os containers:
+docker-compose down
+
+Para verificar os logs:
+docker-compose logs -f
+
+Para acessar o banco via terminal:
+docker exec -it postgres_container psql -U postgres1 -d sabesp_pathfinder
+
+###🧼 Dica de .gitignore:
+Se estiver usando Docker e tiver volumes ou arquivos gerados localmente, adicione estas linhas ao seu .gitignore:
+
+__pycache__/
+*.pyc
+.env
+polls_pg_data/
+
