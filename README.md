@@ -1,3 +1,5 @@
 # Dicionário Python e Afins
 
-## Subindo Ambiente virtual Venv (python) utilizando VsCode:
+
+
+### Subindo Ambiente virtual Venv (python) utilizando VsCode:
