@@ -65,7 +65,7 @@ O volume polls_pg_data garante que os dados do banco sejam persistidos mesmo que
 
 O parâmetro restart: unless-stopped faz o container reiniciar automaticamente, exceto se você pará-lo manualmente.
 
-###▶️ Comandos úteis:
+### ▶️ Comandos úteis:
 
 Para subir o serviço:
 docker-compose up -d
@@ -79,7 +79,7 @@ docker-compose logs -f
 Para acessar o banco via terminal:
 docker exec -it postgres_container psql -U postgres1 -d sabesp_pathfinder
 
-###🧼 Dica de .gitignore:
+### 🧼 Dica de .gitignore:
 Se estiver usando Docker e tiver volumes ou arquivos gerados localmente, adicione estas linhas ao seu .gitignore:
 
 __pycache__/
