@@ -42,11 +42,11 @@ services:
  
         environment:
  
-          - POSTGRES_USER=postgres1
+          - POSTGRES_USER=postgres
  
-          - POSTGRES_PASSWORD=Optz@tech2025
+          - POSTGRES_PASSWORD=senha
  
-          - POSTGRES_DB=sabesp_pathfinder
+          - POSTGRES_DB=nome-banco
  
         volumes:
  
@@ -56,7 +56,7 @@ volumes:
  
     polls_pg_data:
 
-###🔍 Observações:
+### 🔍 Observações:
 A porta externa é 5433 para evitar conflitos com instalações locais do PostgreSQL, mas você pode usar 5432:5432 se preferir.
 
 A imagem da Bitnami já vem com boas práticas de segurança e configuração padrão.
