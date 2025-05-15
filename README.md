@@ -52,7 +52,7 @@ services:
  
           - polls_pg_data:/bitnami/postgresql
  
-volumes:
+   volumes:
  
     polls_pg_data:
 
@@ -124,16 +124,18 @@ E depois:
 pip freeze > requirements.txt
 
 4. Estrutura do Projeto
-.
-├── app/
-│   ├── main.py             # Arquivo principal com a instância do FastAPI
-│   ├── routes/
-│   │   └── exemplo.py      # Exemplo de rota separada
-│   └── models/
-│       └── user.py         # Modelos com Pydantic
-├── requirements.txt
-└── README.md
 
+ 
+       ├── app/
+       │   ├── main.py             # Arquivo principal com a instância do FastAPI
+       │   ├── routes/
+       │   │   └── exemplo.py      # Exemplo de rota separada
+       │   └── models/
+       │       └── user.py         # Modelos com Pydantic
+       ├── requirements.txt
+       └── README.md
+ 
+       
 5. Execute o servidor
 
 uvicorn app.main:app --reload
