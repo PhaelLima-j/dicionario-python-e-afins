@@ -109,19 +109,15 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 2. Crie um ambiente virtual (recomendado)
 
-python -m venv venv
-source venv/bin/activate    # Linux/macOS
-venv\Scripts\activate       # Windows
-
 3. Instale as dependências
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 Caso o arquivo requirements.txt ainda não exista, instale diretamente:
 
-pip install fastapi uvicorn
+`pip install fastapi uvicorn`
 E depois:
 
-pip freeze > requirements.txt
+`pip freeze > requirements.txt`
 
 4. Estrutura do Projeto
 
@@ -138,7 +134,7 @@ pip freeze > requirements.txt
        
 5. Execute o servidor
 
-uvicorn app.main:app --reload
+`uvicorn app.main:app --reload`
 Acesse: http://localhost:8000
 
 Documentação automática: http://localhost:8000/docs
@@ -149,7 +145,7 @@ Documentação alternativa: http://localhost:8000/redoc
 main.py
 python
 
-from fastapi import FastAPI
+```from fastapi import FastAPI
 from app.routes import exemplo
 
 app = FastAPI()
@@ -176,7 +172,7 @@ class User(BaseModel):
     id: int
     nome: str
     email: str
-
+```
 ### ✅ Próximos Passos
 🔗 Integrar com banco de dados (ex: SQLite, PostgreSQL) via SQLAlchemy ou Tortoise ORM
 
