@@ -87,3 +87,103 @@ __pycache__/
 .env
 polls_pg_data/
 
+## 🚀 Projeto FastAPI - API em Python
+
+Este repositório contém a estrutura básica de uma aplicação FastAPI
+
+---
+
+### 📦 Tecnologias Utilizadas
+
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Uvicorn](https://www.uvicorn.org/)
+- Python 3.8+
+
+---
+
+### ⚙️ Como executar o projeto
+
+### 1. Clone o repositório
+
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+2. Crie um ambiente virtual (recomendado)
+
+python -m venv venv
+source venv/bin/activate    # Linux/macOS
+venv\Scripts\activate       # Windows
+
+3. Instale as dependências
+
+pip install -r requirements.txt
+Caso o arquivo requirements.txt ainda não exista, instale diretamente:
+
+pip install fastapi uvicorn
+E depois:
+
+pip freeze > requirements.txt
+
+4. Estrutura do Projeto
+.
+├── app/
+│   ├── main.py             # Arquivo principal com a instância do FastAPI
+│   ├── routes/
+│   │   └── exemplo.py      # Exemplo de rota separada
+│   └── models/
+│       └── user.py         # Modelos com Pydantic
+├── requirements.txt
+└── README.md
+
+5. Execute o servidor
+
+uvicorn app.main:app --reload
+Acesse: http://localhost:8000
+
+Documentação automática: http://localhost:8000/docs
+
+Documentação alternativa: http://localhost:8000/redoc
+
+### 📁 Exemplo de Código
+main.py
+python
+
+from fastapi import FastAPI
+from app.routes import exemplo
+
+app = FastAPI()
+
+app.include_router(exemplo.router)
+
+@app.get("/")
+def read_root():
+    return {"mensagem": "API FastAPI funcionando!"}
+routes/exemplo.py
+
+from fastapi import APIRouter
+
+router = APIRouter()
+
+@router.get("/exemplo")
+def exemplo_rota():
+    return {"rota": "exemplo"}
+models/user.py
+
+from pydantic import BaseModel
+
+class User(BaseModel):
+    id: int
+    nome: str
+    email: str
+
+### ✅ Próximos Passos
+🔗 Integrar com banco de dados (ex: SQLite, PostgreSQL) via SQLAlchemy ou Tortoise ORM
+
+🧪 Adicionar testes com pytest e httpx
+
+🔐 Implementar autenticação com OAuth2 ou JWT
+
+⚙️ Gerenciar variáveis de ambiente com pydantic.BaseSettings ou python-dotenv
+
+📚 Criar uma documentação completa da API com exemplos
+
+
