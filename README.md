@@ -30,31 +30,25 @@ Este repositório é pessoal, mas está aberto a contribuições e sugestões. E
 
 Rodar um banco de dados PostgreSQL localmente usando Docker, você pode utilizar o docker-compose. Abaixo, um exemplo básico de docker-compose.yml:
 
+```
+version: '3.8'
+
 services:
- 
-    postgres:
- 
-        image: bitnami/postgresql:latest
- 
-        ports:
- 
-          - '5432:5433'
- 
-        environment:
- 
-          - POSTGRES_USER=postgres
- 
-          - POSTGRES_PASSWORD=senha
- 
-          - POSTGRES_DB=nome-banco
- 
-        volumes:
- 
-          - polls_pg_data:/bitnami/postgresql
- 
-   volumes:
- 
-    polls_pg_data:
+  postgres:
+    image: bitnami/postgresql:latest
+    ports:
+      - '5432:5432'  # porta do host:porta do container
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=OptzTech2025
+      - POSTGRES_DB=pathfinder_banco
+    volumes:
+      - polls_pg_data:/bitnami/postgresql
+
+volumes:
+  polls_pg_data:
+```
+
 
 ### 🔍 Observações:
 A porta externa é 5433 para evitar conflitos com instalações locais do PostgreSQL, mas você pode usar 5432:5432 se preferir.
