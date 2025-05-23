@@ -128,7 +128,8 @@ E depois:
        
 5. Execute o servidor
 
-`uvicorn app.main:app --reload`
+`uvicorn main:app --reload
+`
 Acesse: http://localhost:8000
 
 Documentação automática: http://localhost:8000/docs
