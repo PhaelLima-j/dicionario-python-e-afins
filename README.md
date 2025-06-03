@@ -179,4 +179,32 @@ class User(BaseModel):
 
 📚 Criar uma documentação completa da API com exemplos
 
+### Termos técnicos
+
+ERM: gerenciamento de riscos empresariais
+	
+Star Schema: é um modelo que organiza os dados do banco de dados de forma mais fáceis de se entender, esse modelo star schema é otimizado para analise de dados, onde tem
+				uma tabela fato que contém todas as principais informações de outras tabelas dimensões, as tabelas dimensões não se conectam uma com as outras
+				
+Snow Flake: é quase o mesmo modelo que o star schema porém as dimensões se conectam, normalmente não se utiliza por questão de perfomance e também porque é mais complicado de 	
+				fazer uma hierarquia
+				
+Data WareHouse:Um data warehouse é um armazem de dados projetado para fornecer suporte às atividades de(BI), especialmente a análise avançada. Em DW os dados sao estruturados.
+					Uma desvantagem do DW é que ele pode se tornar obsoleto, Tem problemas com controle de acesso nos dados e sua estrutura pode se tornar complicada
+
+Data Lake: Quase igual um DW porém pode armazenar dados nao estrutuados como imagens,videos, etc... Uma desvantagem do data lake é que ele pode se tornar um lixão de dados caso 
+				Ele não seja bem "Alimentado", ficando assim com diversos dados perdidos fazendo com que pese o nosso data lake.
+				
+Data Lakehouse: União dos beneficios do DW e do Data Lake, então um data lakehouse pode armazenar dados estrutuados, não estruturados e semi estruturados da empresa por um custo
+bem menor, porque assim eu não preciso ter um DW para o BI e nem um Data Lake para o pessoal de Ciencia de dados, então o Lakehouse fornece essa flexibilidade para
+todo mundo que precisa fazer uma analise preditiva ou até uma analise mais tranquila, eles usam os dados conforme a necessidade deles.
+Temos o Delta Lakehouse e outro que conheço é da Databriks Lakehouse
+
+	• Data Lake: Arquitetura flexível, mas com pouca organização.
+ 	• Data Warehouse: Arquitetura organizada e ideal para análises rápidas.
+ 	• Delta Lake: Framework que organiza e melhora a confiabilidade do Data Lake.
+ 	• Lake House: Arquitetura híbrida que combina flexibilidade com performance.
+ 	• Data Mesh: Conceito de governança descentralizada, mas integrada.
+
+
 
