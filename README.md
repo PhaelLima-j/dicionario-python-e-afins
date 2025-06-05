@@ -48,7 +48,7 @@ services:
 volumes:
   polls_pg_data:
 ```
-
+teste
 
 ### 🔍 Observações:
 A porta externa é 5433 para evitar conflitos com instalações locais do PostgreSQL, mas você pode usar 5432:5432 se preferir.
